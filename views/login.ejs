@@ -1,0 +1,52 @@
+<div class="row mt-5">
+  <div class="col-md-9 m-auto">
+    <div class="card card-body text-center">
+      <h5>
+        <span> </span>
+        <i class="fas fa-user-lock fa-6x" id="login"> </i>
+        <h1>
+          LOGIN
+        </h1>
+      </h5>
+      <%- include("./partials/messages"); -%>
+      <form action="/users/login" method="POST">
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Email"
+              value="<%= typeof email != 'undefined' ? email : '' %>"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-key"></i>
+              </span>
+            </div>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              placeholder="Password"
+              value="<%= typeof password != 'undefined' ? password : '' %>"
+            />
+          </div>
+          <button type="submit" class="btn btn-block btn-danger">LOGIN</button>
+          <p>
+            Don't have an account?
+            <a href="/users/register">Register Here</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
